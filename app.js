@@ -14,10 +14,10 @@ app.get("/phones", (req, res) => {
   res.json(data);
 });
 
-app.get("/phones/:phoneId", (req, res) => {
-  const { phoneId } = req.params;
+app.get("/phones/:id", (req, res) => {
+  const { id } = req.params;
 
-  const phone = data.find((phone) => phone.id === Number(phoneId));
+  const phone = data.find((phone) => phone.id === Number(id));
   if (!phone) {
     res.json({
       message: "Phone not found...",
@@ -29,5 +29,5 @@ app.get("/phones/:phoneId", (req, res) => {
 
 app.listen(PORT, () => {
   console.clear();
-  console.log("Server is running on PORT " + PORT);
+  console.log("Server 🏃🏽 on PORT " + PORT);
 });
